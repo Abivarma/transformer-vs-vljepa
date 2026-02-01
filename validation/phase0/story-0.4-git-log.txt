@@ -1,0 +1,4 @@
+534d27a [TVLJ-002-007] ✅ Phase 0 Setup Complete
+4c36754 Merge branch 'main' of https://github.com/Abivarma/transformer-vs-vljepa
+a982882 Initial commit: Project structure and comprehensive documentation
+66676c8 Initial commit
