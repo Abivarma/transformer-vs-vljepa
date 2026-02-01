@@ -1,0 +1,39 @@
+======================================================================
+Scaled Dot-Product Attention Demonstration
+======================================================================
+
+Input Configuration:
+  Batch size: 1
+  Sequence length: 4
+  Query/Key dimension (d_k): 8
+  Value dimension (d_v): 8
+
+Query shape: torch.Size([1, 4, 8])
+Key shape: torch.Size([1, 4, 8])
+Value shape: torch.Size([1, 4, 8])
+
+--------------------------------Output--------------------------------
+Output shape: torch.Size([1, 4, 8])
+Attention weights shape: torch.Size([1, 4, 4])
+
+-----Attention Weights (how much each position attends to others)-----
+Each row shows attention distribution for one query position:
+
+Position 0: 0.194 0.410 0.324 0.071   (sum=1.000)
+Position 1: 0.041 0.656 0.086 0.217   (sum=1.000)
+Position 2: 0.104 0.206 0.182 0.508   (sum=1.000)
+Position 3: 0.193 0.180 0.195 0.432   (sum=1.000)
+
+-----------------------------Verification-----------------------------
+All attention weights sum to 1.0: True
+
+--------------------------Effect of Scaling---------------------------
+Unscaled scores variance: 9.4439
+Scaled scores variance: 1.1805
+Scaling factor (sqrt(d_k)): 2.8284
+
+Scaling prevents extreme values that would cause gradient problems!
+
+======================================================================
+✓ Attention mechanism executed successfully!
+======================================================================

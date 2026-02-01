@@ -1,0 +1,5 @@
+    1800 01-foundations/01_attention_basics.md
+    1953 01-foundations/02_transformer_theory.md
+    1562 01-foundations/03_jepa_principle.md
+    1554 01-foundations/04_architecture_comparison.md
+    6869 total
