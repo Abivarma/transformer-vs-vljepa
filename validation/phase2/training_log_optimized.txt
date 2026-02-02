@@ -1,0 +1,162 @@
+/Users/abivarma/ML Learnings/transformer-vs-vljepa/02-transformer-impl/train_imdb_optimized.py:293: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=USE_AMP)
+======================================================================
+OPTIMIZED TRANSFORMER TRAINING
+Flash Attention + Mixed Precision + Advanced Techniques
+======================================================================
+
+Using device: mps
+Flash Attention: True
+Gradient Checkpointing: False
+Mixed Precision (AMP): False
+
+Loading IMDB dataset...
+Downloading from HuggingFace...
+Loaded 5000 training and 1000 test samples
+Building vocabulary...
+Vocabulary size: 10000
+
+Creating optimized model...
+Model parameters: 5,785,858
+
+Optimizations enabled:
+  flash_attention: True
+  gradient_checkpointing: False
+  mixed_precision_compatible: True
+  parameters: 5785858
+
+Starting optimized training...
+======================================================================
+
+
+Epoch 1/5
+----------------------------------------------------------------------
+Batch 10/157, Loss: 0.9496, LR: 0.000010
+Batch 20/157, Loss: 0.0215, LR: 0.000020
+Batch 30/157, Loss: 0.0009, LR: 0.000030
+Batch 40/157, Loss: 0.0002, LR: 0.000040
+Batch 50/157, Loss: 0.0001, LR: 0.000050
+Batch 60/157, Loss: 0.0000, LR: 0.000060
+Batch 70/157, Loss: 0.0000, LR: 0.000070
+Batch 80/157, Loss: 0.0000, LR: 0.000080
+Batch 90/157, Loss: 0.0000, LR: 0.000090
+Batch 100/157, Loss: 0.0000, LR: 0.000100
+Batch 110/157, Loss: 0.0000, LR: 0.000100
+Batch 120/157, Loss: 0.0000, LR: 0.000100
+Batch 130/157, Loss: 0.0000, LR: 0.000100
+Batch 140/157, Loss: 0.0000, LR: 0.000099
+Batch 150/157, Loss: 0.0000, LR: 0.000099
+
+Epoch 1 Summary:
+Train Loss: 0.1283, Train Acc: 0.9282
+Test Loss: 0.0000, Test Acc: 1.0000
+Time: 27.89s, LR: 0.000098
+✅ Saved best model with test accuracy: 1.0000
+
+Epoch 2/5
+----------------------------------------------------------------------
+Batch 10/157, Loss: 0.0000, LR: 0.000098
+Batch 20/157, Loss: 0.0000, LR: 0.000097
+Batch 30/157, Loss: 0.0000, LR: 0.000096
+Batch 40/157, Loss: 0.0000, LR: 0.000095
+Batch 50/157, Loss: 0.0000, LR: 0.000094
+Batch 60/157, Loss: 0.0000, LR: 0.000093
+Batch 70/157, Loss: 0.0000, LR: 0.000092
+Batch 80/157, Loss: 0.0000, LR: 0.000090
+Batch 90/157, Loss: 0.0000, LR: 0.000089
+Batch 100/157, Loss: 0.0000, LR: 0.000088
+Batch 110/157, Loss: 0.0000, LR: 0.000086
+Batch 120/157, Loss: 0.0000, LR: 0.000084
+Batch 130/157, Loss: 0.0000, LR: 0.000083
+Batch 140/157, Loss: 0.0000, LR: 0.000081
+Batch 150/157, Loss: 0.0000, LR: 0.000079
+
+Epoch 2 Summary:
+Train Loss: 0.0000, Train Acc: 1.0000
+Test Loss: 0.0000, Test Acc: 1.0000
+Time: 26.44s, LR: 0.000078
+
+Epoch 3/5
+----------------------------------------------------------------------
+Batch 10/157, Loss: 0.0000, LR: 0.000076
+Batch 20/157, Loss: 0.0000, LR: 0.000074
+Batch 30/157, Loss: 0.0000, LR: 0.000072
+Batch 40/157, Loss: 0.0000, LR: 0.000070
+Batch 50/157, Loss: 0.0000, LR: 0.000068
+Batch 60/157, Loss: 0.0000, LR: 0.000065
+Batch 70/157, Loss: 0.0000, LR: 0.000063
+Batch 80/157, Loss: 0.0000, LR: 0.000061
+Batch 90/157, Loss: 0.0000, LR: 0.000059
+Batch 100/157, Loss: 0.0000, LR: 0.000057
+Batch 110/157, Loss: 0.0000, LR: 0.000054
+Batch 120/157, Loss: 0.0000, LR: 0.000052
+Batch 130/157, Loss: 0.0000, LR: 0.000050
+Batch 140/157, Loss: 0.0000, LR: 0.000047
+Batch 150/157, Loss: 0.0000, LR: 0.000045
+
+Epoch 3 Summary:
+Train Loss: 0.0000, Train Acc: 1.0000
+Test Loss: 0.0000, Test Acc: 1.0000
+Time: 26.43s, LR: 0.000043
+
+Epoch 4/5
+----------------------------------------------------------------------
+Batch 10/157, Loss: 0.0000, LR: 0.000041
+Batch 20/157, Loss: 0.0000, LR: 0.000039
+Batch 30/157, Loss: 0.0000, LR: 0.000037
+Batch 40/157, Loss: 0.0000, LR: 0.000035
+Batch 50/157, Loss: 0.0000, LR: 0.000032
+Batch 60/157, Loss: 0.0000, LR: 0.000030
+Batch 70/157, Loss: 0.0000, LR: 0.000028
+Batch 80/157, Loss: 0.0000, LR: 0.000026
+Batch 90/157, Loss: 0.0000, LR: 0.000024
+Batch 100/157, Loss: 0.0000, LR: 0.000022
+Batch 110/157, Loss: 0.0000, LR: 0.000020
+Batch 120/157, Loss: 0.0000, LR: 0.000019
+Batch 130/157, Loss: 0.0000, LR: 0.000017
+Batch 140/157, Loss: 0.0000, LR: 0.000015
+Batch 150/157, Loss: 0.0000, LR: 0.000013
+
+Epoch 4 Summary:
+Train Loss: 0.0000, Train Acc: 1.0000
+Test Loss: 0.0000, Test Acc: 1.0000
+Time: 26.68s, LR: 0.000012
+
+Epoch 5/5
+----------------------------------------------------------------------
+Batch 10/157, Loss: 0.0000, LR: 0.000011
+Batch 20/157, Loss: 0.0000, LR: 0.000010
+Batch 30/157, Loss: 0.0000, LR: 0.000008
+Batch 40/157, Loss: 0.0000, LR: 0.000007
+Batch 50/157, Loss: 0.0000, LR: 0.000006
+Batch 60/157, Loss: 0.0000, LR: 0.000005
+Batch 70/157, Loss: 0.0000, LR: 0.000004
+Batch 80/157, Loss: 0.0000, LR: 0.000003
+Batch 90/157, Loss: 0.0000, LR: 0.000002
+Batch 100/157, Loss: 0.0000, LR: 0.000002
+Batch 110/157, Loss: 0.0000, LR: 0.000001
+Batch 120/157, Loss: 0.0000, LR: 0.000001
+Batch 130/157, Loss: 0.0000, LR: 0.000000
+Batch 140/157, Loss: 0.0000, LR: 0.000000
+Batch 150/157, Loss: 0.0000, LR: 0.000000
+
+Epoch 5 Summary:
+Train Loss: 0.0000, Train Acc: 1.0000
+Test Loss: 0.0000, Test Acc: 1.0000
+Time: 26.74s, LR: 0.000000
+
+======================================================================
+TRAINING COMPLETED!
+======================================================================
+
+Best test accuracy: 1.0000 (100.00%)
+Average epoch time: 26.83s
+Total training time: 134.17s
+
+✅ Target achieved: >80% accuracy on IMDB test set!
+
+Optimizations used:
+  ✓ flash_attention: True
+  ✓ gradient_checkpointing: False
+  ✓ mixed_precision_compatible: True
+  ✓ parameters: 5785858
