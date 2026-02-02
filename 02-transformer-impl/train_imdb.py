@@ -172,29 +172,33 @@ def main():
         device = torch.device("mps")
     print(f"Using device: {device}")
 
-    # Load IMDB dataset using PyTorch's built-in dataset
+    # Load IMDB dataset
     print("Loading IMDB dataset...")
     try:
-        from torchtext.data.utils import get_tokenizer
-        from torchtext.datasets import IMDB
+        # Try using datasets library (HuggingFace)
+        from datasets import load_dataset
 
-        # Load dataset
-        train_iter = IMDB(split="train")
-        test_iter = IMDB(split="test")
+        print("Downloading IMDB dataset from HuggingFace...")
+        dataset = load_dataset("imdb")
 
-        # Extract texts and labels
-        train_texts, train_labels = [], []
-        for label, text in train_iter:
-            train_texts.append(text)
-            train_labels.append(1 if label == "pos" else 0)
+        # Extract texts and labels from training set
+        train_texts = dataset["train"]["text"]
+        train_labels = dataset["train"]["label"]
 
-        test_texts, test_labels = [], []
-        for label, text in test_iter:
-            test_texts.append(text)
-            test_labels.append(1 if label == "pos" else 0)
+        # Extract texts and labels from test set
+        test_texts = dataset["test"]["text"]
+        test_labels = dataset["test"]["label"]
+
+        # Use subset for faster training (first 5000 train, 1000 test)
+        train_texts = train_texts[:5000]
+        train_labels = train_labels[:5000]
+        test_texts = test_texts[:1000]
+        test_labels = test_labels[:1000]
+
+        print(f"Loaded {len(train_texts)} training samples and {len(test_texts)} test samples")
 
     except ImportError:
-        print("torchtext not available. Using dummy data for demonstration.")
+        print("datasets library not available. Using dummy data for demonstration.")
         # Create dummy data for demonstration
         train_texts = [
             "This movie is great and fantastic",
@@ -271,7 +275,7 @@ def main():
         # Save best model
         if test_acc > best_test_acc:
             best_test_acc = test_acc
-            torch.save(model.state_dict(), "02-transformer-impl/best_model.pt")
+            torch.save(model.state_dict(), "best_model.pt")
             print(f"Saved best model with test accuracy: {best_test_acc:.4f}")
 
     print(f"\nTraining completed!")

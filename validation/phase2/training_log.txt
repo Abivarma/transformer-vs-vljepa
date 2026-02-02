@@ -1,0 +1,33 @@
+Using device: mps
+Loading IMDB dataset...
+torchtext not available. Using dummy data for demonstration.
+Train samples: 400, Test samples: 40
+Building vocabulary...
+Vocabulary size: 19
+Creating model...
+Model parameters: 3,230,722
+
+Starting training...
+
+Epoch 1/5
+--------------------------------------------------
+Batch 10/13, Loss: 0.0076
+
+Epoch 1 Summary:
+Train Loss: 0.1989, Train Acc: 0.9250
+Test Loss: 0.0001, Test Acc: 1.0000
+Time: 4.54s
+Traceback (most recent call last):
+  File "/Users/abivarma/ML Learnings/transformer-vs-vljepa/02-transformer-impl/train_imdb.py", line 290, in <module>
+    main()
+  File "/Users/abivarma/ML Learnings/transformer-vs-vljepa/02-transformer-impl/train_imdb.py", line 274, in main
+    torch.save(model.state_dict(), "02-transformer-impl/best_model.pt")
+  File "/Users/abivarma/ML Learnings/transformer-vs-vljepa/.venv/lib/python3.11/site-packages/torch/serialization.py", line 976, in save
+    with _open_zipfile_writer(f) as opened_zipfile:
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abivarma/ML Learnings/transformer-vs-vljepa/.venv/lib/python3.11/site-packages/torch/serialization.py", line 838, in _open_zipfile_writer
+    return container(name_or_buffer)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abivarma/ML Learnings/transformer-vs-vljepa/.venv/lib/python3.11/site-packages/torch/serialization.py", line 802, in __init__
+    torch._C.PyTorchFileWriter(
+RuntimeError: Parent directory 02-transformer-impl does not exist.
